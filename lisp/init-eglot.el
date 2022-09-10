@@ -9,7 +9,13 @@
 
 
 (when (maybe-require-package 'eglot)
-  (maybe-require-package 'consult-eglot))
+  (maybe-require-package 'consult-eglot)
+  (with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs `((c++-mode c-mode) "/usr/local/opt/llvm@14/bin/clangd"))
+  (add-hook 'c-mode-hook 'eglot-ensure)
+  (add-hook 'c++-mode-hook 'eglot-ensure))
+  )
+
 
 
 
