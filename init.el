@@ -43,7 +43,8 @@
 
 
 ;; Allow users to provide an optional "init-preload-local.el"
-(require 'init-preload-local nil t)
+;; (require 'init-preload-local nil t)
+(require 'init-preload-local)
 
 ;; Load configs for specific features and modes
 (require-package 'diminish)
@@ -61,7 +62,7 @@
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flymake)
-;; (require 'init-eglot)
+(require 'init-eglot)
 
 (require 'init-recentf)
 (require 'init-minibuffer)
@@ -79,7 +80,7 @@
 (require 'init-git)
 (require 'init-github)
 
-(require 'init-projectile)
+;; (require 'init-projectile)
 
 (require 'init-compile)
 (require 'init-crontab)
@@ -100,7 +101,7 @@
 (require 'init-elm)
 (require 'init-purescript)
 (require 'init-ruby)
-(require 'init-rails)
+;; (require 'init-rails)
 (require 'init-sql)
 (require 'init-ocaml)
 (require 'init-j)
@@ -158,7 +159,8 @@
           (lambda ()
             (require 'server)
             (unless (server-running-p)
-              (server-start))))
+              (server-start))
+            (profiler-stop)))
 
 ;; Variables configured via the interactive 'customize' interface
 (when (file-exists-p custom-file)

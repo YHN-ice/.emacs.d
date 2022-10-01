@@ -4,8 +4,9 @@
       (setq mac-option-modifier 'meta))
 
 (require 'init-use-package)
-(require 'init-lsp-mode)
-(require 'init-dap-mode)
+;; (require 'init-lsp-mode)
+;; (require 'init-dap-mode)
+(require 'init-auctex)
 ;;;(when *is-a-mac*
 ;;;  (setq mac-option-modifier 'meta
 ;;;        mac-command-modifier 'super))
@@ -19,4 +20,26 @@
 ;;; (global-set-key (kbd "s-x") 'kill-region)
 ;;;
 
+
+;; (defun company-rather-than-corfu ()
+;;   (if (equal major-mode 'text-mode)
+;;       (and (company-mode nil)
+;;            (corfu-mode -1))
+;;     )
+;;   )
+
+;; TODO: make 'company-rather-than-corfu be called after hooks of 'after-change-major-mode-hook is run
+;; (add-hook 'after-change-major-mode-hook #'company-rather-than-corfu)
+
+(require 'init-project)
+;; (debug-on-entry 'company-mode-on)
+;; (debug-on-entry 'company-mode)
+;; (debug-on-entry 'company-mode-set-explicitly)
+;; (setq company-global-modes '(not org-mode))
+
+;; (defun jpk/org-mode-hook ()
+;;   (company-mode -1))
+;; (add-hook 'org-mode-hook #'jpk/org-mode-hook)
+
+(require 'init-cape)
 (provide 'init-local)

@@ -22,8 +22,8 @@
      consult-bookmark consult-recent-file consult-xref
      consult--source-recent-file consult--source-project-recent-file consult--source-bookmark)
 
-    (when (maybe-require-package 'projectile)
-      (setq-default consult-project-root-function 'projectile-project-root))
+    ;; (when (maybe-require-package 'projectile)
+    ;;   (setq-default consult-project-root-function 'projectile-project-root))
 
     (when (and (executable-find "rg") (maybe-require-package 'affe))
       (defun sanityinc/affe-grep-at-point (&optional dir initial)
