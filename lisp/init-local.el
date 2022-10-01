@@ -40,6 +40,7 @@
 ;; (defun jpk/org-mode-hook ()
 ;;   (company-mode -1))
 ;; (add-hook 'org-mode-hook #'jpk/org-mode-hook)
+(setq-default cursor-type 'bar)
 
 (require 'init-cape)
 (provide 'init-local)
